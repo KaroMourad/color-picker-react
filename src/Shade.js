@@ -37,6 +37,7 @@ function Shade(props) {
     h = hsl[0]*360;
     s = hsl[1]*100;
     l = hsl[2]*100;
+    let bgc;
 			
     let arr = [];
     for(let i=0; i < 25; i++) {
@@ -48,29 +49,13 @@ function Shade(props) {
         if ( i > 12 ) {
             l1 = l*i/12;
         }
-        let bgc = `hsl( ${h},${s}%,${l1}%)`;
+        bgc = `hsl( ${h},${s}%,${l1}%)`;
         console.log(h,s,l1)
-        arr.push(<span key={i} style={{backgroundColor:bgc,styles.cont}}>
+        arr.push(<span key={i} style={{display:"inline-block",margin: 1,border:"2px solid black", backgroundColor:bgc,height: 100, width: 40}}>
         </span>)
     }
-    return (
-            <>
-            <div>
-               {arr}
-            </div>
-            </>  
-    );
+    return  <div> {arr} </div>;
 }
 
 export default Shade;
 
-const styles = {
-    cont: {
-        display: "inline-block",
-        margin: 1,
-        border:"3px solid black",
-        height: 100,
-        width: 40
-    }
- 
-}

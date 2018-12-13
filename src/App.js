@@ -23,7 +23,7 @@ class App extends Component {
     const color = `rgb(${r}, ${g}, ${b})`
     return (
       <div className="App">
-        <div style={{height: 250, width: 250, backgroundColor: color, margin: "0 auto"}}/>
+        <div style={{height: 250, width: 250, backgroundColor: color, margin: "0 auto",border:"2px solid black"}}/>
         {
           Object.values(this.state).every(color => color !== 0) || Object.values(this.state).every(color => color !== 255) ?
           <Shade {...this.state}/> : null
